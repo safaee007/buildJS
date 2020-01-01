@@ -1,4 +1,5 @@
 const Express = require('express');
+const procces = require('process');
 const app = new Express();
 const build = require('./build/pageBuild');
 var bodyParser = require('body-parser'); //npm install body-parser
@@ -16,6 +17,8 @@ app.use(bodyParser.json())
 //home
 app.get('/', (req, res) =>{
     res.send('home page');
+    console.log(procces.env);
+    console.log(procces.env.USERNAME);
 })
 
 //build
